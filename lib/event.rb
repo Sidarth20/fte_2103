@@ -24,7 +24,13 @@ class Event
     end
   end
 
-  def potential_revenue
-
+  def total_inventory
+    #need hash with item as keys & quantity & food trucks as values
+    @food_trucks.each_with_object({}) do |food_truck, hash|
+      food_truck.inventory.each do |item|
+        hash[item] = food_truck
+        require 'pry'; binding.pry
+      end
+    end
   end
 end
